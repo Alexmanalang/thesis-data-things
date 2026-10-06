@@ -204,6 +204,12 @@
   nav.links a.active { color: var(--accent); background: var(--tint); font-weight: 600; }
   nav.links a.cta { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
   section, .hero { scroll-margin-top: 64px; }
+
+  .subsection { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
+  .footer-block { margin-bottom: 36px; scroll-margin-top: 64px; }
+  .footer-block h2 { color: var(--ink); font-size: clamp(20px, 3vw, 26px); }
+  .footer-contact .card { color: var(--ink); }
+  footer .fine { margin: 0; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -211,14 +217,10 @@
 <header class="top">
   <div class="wrap">
     <nav class="links" aria-label="Page sections">
-      <a href="#glance">Overview</a>
-      <a href="#question">Question</a>
-      <a href="#framework">Framework</a>
+      <a href="#overview">Overview</a>
       <a href="#who">Who</a>
       <a href="#what">What you'll do</a>
-      <a href="#why">Why</a>
       <a href="#privacy">Privacy</a>
-      <a href="#contact">Contact</a>
       <a href="#join" class="cta">Participate</a>
     </nav>
   </div>
@@ -263,7 +265,7 @@
       </div>
     </div>
 
-    <section id="glance">
+    <section id="overview">
       <h2>The Study at a Glance</h2>
       <div class="venn-wrap">
         <div class="venn">
@@ -300,9 +302,7 @@
         <div class="ends"><span>Architect-led</span><span>Degree of AI involvement</span><span>AI-assisted</span></div>
       </div>
       <p class="note">The study asks how much AI involvement is appropriate for each task, and what architect oversight that involvement requires.</p>
-    </section>
-
-    <section id="question">
+    <div class="subsection" id="question">
       <h2>The Central Question</h2>
       <div class="question">
         <span class="label">Research question</span>
@@ -310,9 +310,9 @@
       </div>
       <p>The study does not seek one universal rule such as “AI stops at Stage X.” It asks how a <strong>common assessment basis</strong> can help determine appropriate AI involvement for individual tasks, while the final professional threshold remains dependent on the architect, firm, project, and professional standards.</p>
       <p style="font-size:15px;color:var(--muted)"><strong>Architectural production</strong> here means the preparation and development of drawings, documentation, and project outputs. It does not mean physical construction.</p>
-    </section>
+    </div>
 
-    <section id="framework">
+    <div class="subsection" id="framework">
       <h2>How the Framework Works</h2>
       <p>The study's output is the <strong>Strategic Human–AI Architectural Workflow Framework</strong>: a structured basis for deciding, task by task, what AI's role should be and what architect oversight is needed. It supports professional judgment and does not replace it.</p>
 
@@ -334,6 +334,7 @@
         <li class="end"><strong>AI Functional Boundary</strong><span>The appropriate limit of AI's role or reliance for that task, relative to human judgment and professional accountability.</span></li>
       </ol>
       <div class="note"><strong>Preliminary mechanism.</strong> The assessment is being demonstrated through a proof-of-concept on an architectural scenario. It is not yet validated. Practitioner survey and expert interview evidence will be used to refine it so that it reflects Philippine architectural practice.</div>
+    </div>
     </section>
 
     <section id="who">
@@ -388,15 +389,6 @@
       </div>
     </section>
 
-    <section id="why">
-      <h2>Why Participate?</h2>
-      <p>Your participation contributes to a study examining AI not simply as a technological tool, but as something increasingly incorporated into architectural work. The study seeks to understand:</p>
-      <blockquote>What is AI doing within architectural workflows?</blockquote>
-      <blockquote>What conditions shape its integration?</blockquote>
-      <blockquote>What professional considerations affect how much AI involvement is appropriate?</blockquote>
-      <p>The findings will contribute to the development of a <strong>Strategic Human–AI Architectural Workflow Framework</strong> intended to provide a structured basis for considering AI roles, degree of involvement, and appropriate architect oversight across architectural workflow tasks.</p>
-    </section>
-
     <section id="privacy">
       <h2>What Happens to My Information?</h2>
       <p>Information gathered through the study will be used for academic research purposes and analyzed in relation to the study's research objectives.</p>
@@ -419,7 +411,21 @@
       </div>
     </section>
 
-    <section id="contact">
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div id="why" class="footer-block">
+      <h2>Why Participate?</h2>
+      <p>Your participation contributes to a study examining AI not simply as a technological tool, but as something increasingly incorporated into architectural work. The study seeks to understand:</p>
+      <blockquote>What is AI doing within architectural workflows?</blockquote>
+      <blockquote>What conditions shape its integration?</blockquote>
+      <blockquote>What professional considerations affect how much AI involvement is appropriate?</blockquote>
+      <p>The findings will contribute to the development of a <strong>Strategic Human–AI Architectural Workflow Framework</strong> intended to provide a structured basis for considering AI roles, degree of involvement, and appropriate architect oversight across architectural workflow tasks.</p>
+    </div>
+    <div id="contact" class="footer-block footer-contact">
       <h2>Questions About Participation?</h2>
       <p>For questions regarding the study or participation, please use the contact information provided by the researchers.</p>
       <div class="card meta">
@@ -430,13 +436,9 @@
         <div><span>Researchers</span><span>Alexandra Claudine Manalang</span></div>
         <div><span>Contact</span><span><a href="mailto:public.acm@protonmail.com">public.acm@protonmail.com</a> or <a href="mailto:max2363@dlsud.edu.ph">max2363@dlsud.edu.ph</a></span></div>
       </div>
-    </section>
-
+    </div>
+    <p class="fine">Undergraduate thesis. Participation is voluntary and for academic research purposes only.</p>
   </div>
-</main>
-
-<footer>
-  <div class="wrap">Undergraduate thesis. Participation is voluntary and for academic research purposes only.</div>
 </footer>
 
 <script>
