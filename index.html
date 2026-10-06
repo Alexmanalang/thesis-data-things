@@ -176,6 +176,23 @@
   .spectrum { margin-top: 8px; }
   .spectrum .bar { height: 10px; border-radius: 99px; background: linear-gradient(90deg, var(--tint), var(--accent)); border: 1px solid var(--line); }
   .spectrum .ends { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  .question { background: var(--accent); color: var(--accent-ink); border-radius: var(--radius); padding: 26px; margin: 0 0 18px; }
+  .question .label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+  .question p { font-family: "Fraunces", Georgia, serif; font-size: clamp(20px, 3.4vw, 26px); line-height: 1.3; margin: 8px 0 0; }
+  .pillars { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); margin-bottom: 8px; }
+  @media (min-width: 640px) { .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .pillar { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: 16px 18px; }
+  .pillar b { display: block; font-size: 11px; letter-spacing: .12em; color: var(--accent); margin-bottom: 4px; }
+  .pillar strong { display: block; margin-bottom: 4px; }
+  .pillar span { color: var(--muted); font-size: 15px; }
+  .chain { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 0; }
+  .chain li { position: relative; padding: 10px 14px 10px 44px; border-left: 2px solid var(--accent); margin-left: 10px; font-size: 15px; }
+  .chain li::before { content: ""; position: absolute; left: -7px; top: 17px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+  .chain li strong { display: block; }
+  .chain li span { color: var(--muted); font-size: 14px; }
+  .chain li.end { border-left-color: transparent; }
+  .chain li.end::before { background: var(--accent); }
 </style>
 </head>
 <body>
@@ -260,6 +277,40 @@
         <div class="ends"><span>Architect-led</span><span>Degree of AI involvement</span><span>AI-assisted</span></div>
       </div>
       <p class="note">The study asks how much AI involvement is appropriate for each task, and what architect oversight that involvement requires.</p>
+    </section>
+
+    <section id="question">
+      <h2>The Central Question</h2>
+      <div class="question">
+        <span class="label">Research question</span>
+        <p>What boundaries should guide the degree and role of AI involvement across architectural design and production workflow tasks?</p>
+      </div>
+      <p>The study does not seek one universal rule such as “AI stops at Stage X.” It asks how a <strong>common assessment basis</strong> can help determine appropriate AI involvement for individual tasks, while the final professional threshold remains dependent on the architect, firm, project, and professional standards.</p>
+      <p style="font-size:15px;color:var(--muted)"><strong>Architectural production</strong> here means the preparation and development of drawings, documentation, and project outputs. It does not mean physical construction.</p>
+    </section>
+
+    <section id="framework">
+      <h2>How the Framework Works</h2>
+      <p>The study's output is the <strong>Strategic Human–AI Architectural Workflow Framework</strong>: a structured basis for deciding, task by task, what AI's role should be and what architect oversight is needed. It supports professional judgment and does not replace it.</p>
+
+      <h3>The Four-Pillar Assessment</h3>
+      <p>Each workflow task is examined through four assessment dimensions. They are not yes/no gates. Together they describe the task.</p>
+      <div class="pillars">
+        <div class="pillar"><b>01</b><strong>Professional Judgment</strong><span>How much the task depends on the architect's professional judgment.</span></div>
+        <div class="pillar"><b>02</b><strong>Accountability / Consequence</strong><span>What is at stake if the output is wrong, and who answers for it.</span></div>
+        <div class="pillar"><b>03</b><strong>Verifiability</strong><span>How readily the output can be checked against defined project or professional criteria.</span></div>
+        <div class="pillar"><b>04</b><strong>Contextual Dependence / Ambiguity</strong><span>How strongly the task depends on context, and how open to interpretation it is.</span></div>
+      </div>
+
+      <h3>From task to boundary</h3>
+      <ol class="chain">
+        <li><strong>Architectural workflow task</strong><span>For example, façade exploration or drawing coordination.</span></li>
+        <li><strong>Four-Pillar Assessment</strong><span>The task is examined across the four dimensions.</span></li>
+        <li><strong>AI role and degree of involvement</strong><span>What function AI performs, and how substantially it takes part.</span></li>
+        <li><strong>Architect oversight and verification</strong><span>What the architect must check, validate, and decide.</span></li>
+        <li class="end"><strong>AI Functional Boundary</strong><span>The appropriate limit of AI's role or reliance for that task, relative to human judgment and professional accountability.</span></li>
+      </ol>
+      <div class="note"><strong>Preliminary mechanism.</strong> The assessment is being demonstrated through a proof-of-concept on an architectural scenario. It is not yet validated. Practitioner survey and expert interview evidence will be used to refine it so that it reflects Philippine architectural practice.</div>
     </section>
 
     <section id="who">
