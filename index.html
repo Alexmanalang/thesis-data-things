@@ -193,12 +193,35 @@
   .chain li span { color: var(--muted); font-size: 14px; }
   .chain li.end { border-left-color: transparent; }
   .chain li.end::before { background: var(--accent); }
+
+  /* nav */
+  header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); padding: 10px 0; }
+  header.top .wrap { display: flex; align-items: center; gap: 16px; }
+  nav.links { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  nav.links::-webkit-scrollbar { display: none; }
+  nav.links a { padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 13px; letter-spacing: .04em; text-transform: none; white-space: nowrap; }
+  nav.links a:hover { background: var(--tint); color: var(--ink); }
+  nav.links a.active { color: var(--accent); background: var(--tint); font-weight: 600; }
+  nav.links a.cta { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  section, .hero { scroll-margin-top: 64px; }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="wrap">Undergraduate Architectural Research</div>
+  <div class="wrap">
+    <nav class="links" aria-label="Page sections">
+      <a href="#glance">Overview</a>
+      <a href="#question">Question</a>
+      <a href="#framework">Framework</a>
+      <a href="#who">Who</a>
+      <a href="#what">What you'll do</a>
+      <a href="#why">Why</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+      <a href="#join" class="cta">Participate</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -416,5 +439,23 @@
   <div class="wrap">Undergraduate thesis. Participation is voluntary and for academic research purposes only.</div>
 </footer>
 
+<script>
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('nav.links a:not(.cta)'));
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (a) { a.classList.remove('active'); });
+          var a = map[e.target.id];
+          if (a) { a.classList.add('active'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  })();
+</script>
 </body>
 </html>
